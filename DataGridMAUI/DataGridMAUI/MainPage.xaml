@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:core="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+             xmlns:local="clr-namespace:DataGridMAUI"
+             xmlns:sfDatagrid="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             x:Class="DataGridMAUI.MainPage">
+    <ContentPage.BindingContext>
+        <local:ViewModel x:Name="ViewModel"></local:ViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Behaviors>
+        <local:MainPageBehavior></local:MainPageBehavior>
+    </ContentPage.Behaviors>
+    <Grid x:Name="grid">
+        <sfDatagrid:SfDataGrid x:Name="dataGrid" ColumnWidthMode="Fill" GridLinesVisibility="Both" HeaderGridLinesVisibility="Both" ItemsSource="{Binding OrderInfoCollection}">
+        </sfDatagrid:SfDataGrid>
+        <core:SfBusyIndicator x:Name="busyIndicator" AnimationType="SingleCircle" IsRunning="{Binding IsLoading,Mode=TwoWay}" TextColor="Magenta"
+                                       SizeFactor="0.5"/>
+    </Grid>
+</ContentPage>
