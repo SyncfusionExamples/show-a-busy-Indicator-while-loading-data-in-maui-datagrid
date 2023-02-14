@@ -60,3 +60,4 @@ Bind the value of ViewModel.IsLoading property to SfBusyIndicator.IsRunning prop
     </Grid>
 </ContentPage>
 ```
+![LoadingBusyIndicator](LoadingBusyIndicator.gif)
